@@ -1,8 +1,14 @@
+import React from "react";
 import "./ExpensesFilter.css";
 
-const ExpensesFilter = (props) => {
-  const dropdownChangeHandler = (event) => {
-    props.onFilterYear(event.target.value);
+type ExpensesFilterProps = {
+  selected: string;
+  onFilterYear: any;
+};
+
+const ExpensesFilter = (props: ExpensesFilterProps) => {
+  const dropdownChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    props.onFilterYear(e.target.value);
   };
 
   return (

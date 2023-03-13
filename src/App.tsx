@@ -1,5 +1,13 @@
+import React from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+
+type ExpenseData = {
+  title: string;
+  amount: string;
+  date: Date;
+};
+
 const App = () => {
   const expenses = [
     {
@@ -28,7 +36,7 @@ const App = () => {
     },
   ];
 
-  const addExpenseHandler = (expense) => {
+  const addExpenseHandler = (expense: ExpenseData) => {
     console.log("in App.js");
     console.log(expense);
   };

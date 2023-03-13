@@ -1,8 +1,19 @@
+import React from "react";
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
-const NewExpense = (props) => {
-  const SaveExpenseDataHandler = (enteredExpenseData) => {
+type ExpenseData = {
+  title: string;
+  amount: string;
+  date: Date;
+};
+
+type NewExpenseProps = {
+  onAddExpense: (expense: any) => void;
+};
+
+const NewExpense = (props: NewExpenseProps) => {
+  const SaveExpenseDataHandler = (enteredExpenseData: ExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
